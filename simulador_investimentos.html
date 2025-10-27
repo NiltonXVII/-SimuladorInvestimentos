@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco do Brasil - Simulador de Investimentos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="simulador_investimentos.css">
+    <link rel="shortcut icon" href="assets/img/dialoga.png" type="image/x-icon">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<header>
+    <div class="fundo_amarelo_destaque border-bottom d-none d-lg-block">
+        <div class="container">
+            <nav class="nav justify-content-between small">
+                <div class="d-flex">
+                    <a class="nav-link texto_azul_principal link_animado" href="#"><i class="bi bi-person me-2"></i>Para
+                        Você</a>
+                    <a class="nav-link texto_azul_principal link_animado" href="#"><i class="bi bi-building me-2"></i>Para
+                        sua Empresa</a>
+                    <a class="nav-link texto_azul_principal link_animado" href="#"><i class="bi bi-bank me-2"></i>Setor
+                        Público</a>
+                    <a class="nav-link texto_azul_principal link_animado" href="#"><i class="bi bi-tree me-2"></i>Agronegócios</a>
+                </div>
+                <div class="d-flex">
+                    <a class="nav-link texto_azul_principal link_animado" href="#"><i
+                            class="bi bi-question-circle me-2"></i>Ajuda</a>
+                    <a class="nav-link texto_azul_principal link_animado" href="#rodape_principal"><i
+                            class="bi bi-universal-access me-2"></i>Acessibilidade</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="fundo_azul_principal shadow-sm">
+        <div class="container py-2 d-flex justify-content-between align-items-center">
+            <a href="simulador_investimentos.html" class="text-decoration-none d-flex align-items-center gap-3">
+                <img src="assets/img/dialoga.png" alt="Logo Banco do Brasil" height="60">
+                <span class="fs-4 fw-bold d-none d-sm-inline texto_amarelo_destaque link_animado">Banco <br>do Brasil</span>
+            </a>
+            <div class="flex-grow-1 mx-4 d-none d-lg-block">
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="O que você procura?">
+                    <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2 text-nowrap">
+                    <img src="assets/img/3.jpg" alt="Foto do Perfil" width="60" height="60" class="rounded-circle">
+                    <span class="texto_amarelo_destaque fw-bold link_animado">Patricia <br>da Silva</span>
+                </div>
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#modal_acesso_conta">
+                        <i class="bi bi-person-circle me-1"></i>Acessar
+                    </button>
+                    <button type="button" class="btn btn-sm fw-bold botao_amarelo" data-bs-toggle="modal"
+                            data-bs-target="#modal_nova_conta">
+                        Abra sua conta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg fundo_azul_principal border-bottom">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menu_navegacao_principal" aria-controls="menu_navegacao_principal"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu_navegacao_principal">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle texto_amarelo_destaque link_linha_animada_header" href="#"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                                class="bi bi-box-seam me-2"></i>Produtos e Serviços</a>
+                        <ul class="dropdown-menu fundo_azul_principal border-0 shadow-lg">
+                            <li><a class="dropdown-item texto_amarelo_destaque link_animado" href="#"><i
+                                    class="bi bi-person-vcard me-2"></i>Contas</a></li>
+                            <li><a class="dropdown-item texto_amarelo_destaque link_animado" href="#"><i
+                                    class="bi bi-credit-card me-2"></i>Cartões</a></li>
+                            <li><a class="dropdown-item texto_amarelo_destaque link_animado" href="#"><i
+                                    class="bi bi-cash-coin me-2"></i>Empréstimos</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item texto_amarelo_destaque link_animado" href="#"><i
+                                    class="bi bi-graph-up-arrow me-2"></i>Investimentos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle texto_amarelo_destaque link_linha_animada_header" href="#"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-star me-2"></i>Vantagens</a>
+                        <ul class="dropdown-menu fundo_azul_principal border-0 shadow-lg">
+                            <li><a class="dropdown-item texto_amarelo_destaque link_animado" href="#"><i
+                                    class="bi bi-award me-2"></i>Programa de Pontos</a></li>
+                            <li><a class="dropdown-item texto_amarelo_destaque link_animado" href="#"><i
+                                    class="bi bi-tag me-2"></i>Descontos e Parceiros</a></li>
+                            <li><a class="dropdown-item texto_amarelo_destaque link_animado" href="#"><i
+                                    class="bi bi-arrow-counterclockwise me-2"></i>Cashback</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle texto_amarelo_destaque link_linha_animada_header" href="#"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                                class="bi bi-headset me-2"></i>Atendimento</a>
+                        <ul class="dropdown-menu fundo_azul_principal border-0 shadow-lg">
+                            <li><a class="dropdown-item texto_amarelo_destaque link_animado" href="#"><i
+                                    class="bi bi-chat-dots me-2"></i>Chat Online</a></li>
+                            <li><a class="dropdown-item texto_amarelo_destaque link_animado" href="#"><i
+                                    class="bi bi-geo-alt me-2"></i>Encontre uma Agência</a></li>
+                            <li><a class="dropdown-item texto_amarelo_destaque link_animado" href="#"><i
+                                    class="bi bi-telephone me-2"></i>SAC / Ouvidoria</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link texto_amarelo_destaque link_linha_animada_header active" href="#"><i
+                                class="bi bi-calculator me-2"></i>Simulador</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="flex-grow-1 container py-5">
+    <div class="simulador_container p-4 p-md-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold"><i class="bi bi-bar-chart-line-fill me-2"></i>Simule seu Investimento</h1>
+            <p class="text-muted">Descubra o potencial de rendimento do seu dinheiro.</p>
+        </div>
+
+        <ul class="nav nav-tabs nav-fill mb-4" id="abas_investimento" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="aba_cdb" data-bs-toggle="tab" data-bs-target="#painel_cdb"
+                        type="button" role="tab"><i class="bi bi-graph-up me-2"></i>Renda Fixa (CDB)
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="aba_tesouro" data-bs-toggle="tab" data-bs-target="#painel_tesouro"
+                        type="button" role="tab"><i class="bi bi-shield-check me-2"></i>Tesouro Direto
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="aba_poupanca" data-bs-toggle="tab" data-bs-target="#painel_poupanca"
+                        type="button" role="tab"><i class="bi bi-piggy-bank me-2"></i>Poupança
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="conteudo_abas_investimento">
+            <div class="tab-pane fade show active" id="painel_cdb" role="tabpanel">
+                <div class="row g-4 g-lg-5">
+                    <div class="col-lg-6">
+                        <form id="formulario_cdb">
+                            <div class="mb-3"><label for="cdb_valor_inicial" class="form-label"><i
+                                    class="bi bi-cash me-2"></i>Valor Inicial</label>
+                                <div class="input-group"><span class="input-group-text">R$</span><input type="number" class="form-control" id="cdb_valor_inicial" value="1000" min="0"></div>
+                            </div>
+                            <div class="mb-3"><label for="cdb_aporte_mensal"
+                                                     class="form-label d-flex align-items-center"><i
+                                    class="bi bi-calendar-plus me-2"></i>Aportes Mensais<i
+                                    class="bi bi-info-circle-fill ms-2 text-muted icone_tooltip"
+                                    data-bs-toggle="tooltip"
+                                    title="Valor que você pretende adicionar todo mês."></i></label>
+                                <div class="input-group"><span class="input-group-text">R$</span><input type="number" class="form-control" id="cdb_aporte_mensal" value="200" min="0"></div>
+                            </div>
+                            <div class="mb-3"><label for="cdb_prazo" class="form-label"><i
+                                    class="bi bi-clock-history me-2"></i>Prazo (em meses)</label><input type="number" class="form-control" id="cdb_prazo" value="12" min="1"></div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="area_resultados p-4 h-100"><h5 class="fw-bold mb-3"><i
+                                class="bi bi-clipboard2-data-fill me-2"></i>Resultado da Simulação</h5>
+                            <div class="d-flex justify-content-between mb-2"><span><i
+                                    class="bi bi-check-circle me-2"></i>Valor Final</span><span
+                                    class="fw-bold fs-5 text-primary" id="cdb_resultado_total">R$ 0,00</span></div>
+                            <hr>
+                            <div class="d-flex justify-content-between text-muted small"><span><i
+                                    class="bi bi-wallet2 me-2"></i>Valor Investido</span><span id="cdb_valor_investido">R$ 0,00</span>
+                            </div>
+                            <div class="d-flex justify-content-between text-muted small mb-3"><span><i
+                                    class="bi bi-graph-up-arrow me-2"></i>Total em Juros</span><span
+                                    id="cdb_total_juros">R$ 0,00</span></div>
+                            <div class="progress" style="height: 10px;">
+                                <div id="cdb_progresso_investido" class="progress-bar bg-secondary" role="progressbar"
+                                     style="width: 0%"></div>
+                                <div id="cdb_progresso_juros" class="progress-bar bg-primary" role="progressbar"
+                                     style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="painel_tesouro" role="tabpanel">
+                <div class="row g-4 g-lg-5">
+                    <div class="col-lg-6">
+                        <form id="formulario_tesouro">
+                            <div class="mb-3"><label for="tesouro_valor_inicial" class="form-label"><i
+                                    class="bi bi-cash me-2"></i>Valor Inicial</label>
+                                <div class="input-group"><span class="input-group-text">R$</span><input type="number" class="form-control" id="tesouro_valor_inicial" value="1000" min="0"></div>
+                            </div>
+                            <div class="mb-3"><label for="tesouro_aporte_mensal" class="form-label"><i
+                                    class="bi bi-calendar-plus me-2"></i>Aportes Mensais</label>
+                                <div class="input-group"><span class="input-group-text">R$</span><input type="number" class="form-control" id="tesouro_aporte_mensal" value="200" min="0"></div>
+                            </div>
+                            <div class="mb-3"><label for="tesouro_prazo" class="form-label"><i
+                                    class="bi bi-clock-history me-2"></i>Prazo (em meses)</label><input type="number" class="form-control" id="tesouro_prazo" value="12" min="1"></div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="area_resultados p-4 h-100"><h5 class="fw-bold mb-3"><i
+                                class="bi bi-clipboard2-data-fill me-2"></i>Resultado da Simulação</h5>
+                            <div class="d-flex justify-content-between mb-2"><span><i
+                                    class="bi bi-check-circle me-2"></i>Valor Final</span><span
+                                    class="fw-bold fs-5 text-primary" id="tesouro_resultado_total">R$ 0,00</span></div>
+                            <hr>
+                            <div class="d-flex justify-content-between text-muted small"><span><i
+                                    class="bi bi-wallet2 me-2"></i>Valor Investido</span><span
+                                    id="tesouro_valor_investido">R$ 0,00</span></div>
+                            <div class="d-flex justify-content-between text-muted small mb-3"><span><i
+                                    class="bi bi-graph-up-arrow me-2"></i>Total em Juros</span><span
+                                    id="tesouro_total_juros">R$ 0,00</span></div>
+                            <div class="progress" style="height: 10px;">
+                                <div id="tesouro_progresso_investido" class="progress-bar bg-secondary"
+                                     role="progressbar" style="width: 0%"></div>
+                                <div id="tesouro_progresso_juros" class="progress-bar bg-primary" role="progressbar"
+                                     style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="painel_poupanca" role="tabpanel">
+                <div class="row g-4 g-lg-5">
+                    <div class="col-lg-6">
+                        <form id="formulario_poupanca">
+                            <div class="mb-3"><label for="poupanca_valor_inicial" class="form-label"><i
+                                    class="bi bi-cash me-2"></i>Valor Inicial</label>
+                                <div class="input-group"><span class="input-group-text">R$</span><input type="number" class="form-control" id="poupanca_valor_inicial" value="1000" min="0"></div>
+                            </div>
+                            <div class="mb-3"><label for="poupanca_aporte_mensal" class="form-label"><i
+                                    class="bi bi-calendar-plus me-2"></i>Aportes Mensais</label>
+                                <div class="input-group"><span class="input-group-text">R$</span><input type="number" class="form-control" id="poupanca_aporte_mensal" value="200" min="0"></div>
+                            </div>
+                            <div class="mb-3"><label for="poupanca_prazo" class="form-label"><i
+                                    class="bi bi-clock-history me-2"></i>Prazo (em meses)</label><input type="number" class="form-control" id="poupanca_prazo" value="12" min="1"></div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="area_resultados p-4 h-100"><h5 class="fw-bold mb-3"><i
+                                class="bi bi-clipboard2-data-fill me-2"></i>Resultado da Simulação</h5>
+                            <div class="d-flex justify-content-between mb-2"><span><i
+                                    class="bi bi-check-circle me-2"></i>Valor Final</span><span
+                                    class="fw-bold fs-5 text-primary" id="poupanca_resultado_total">R$ 0,00</span></div>
+                            <hr>
+                            <div class="d-flex justify-content-between text-muted small"><span><i
+                                    class="bi bi-wallet2 me-2"></i>Valor Investido</span><span
+                                    id="poupanca_valor_investido">R$ 0,00</span></div>
+                            <div class="d-flex justify-content-between text-muted small mb-3"><span><i
+                                    class="bi bi-graph-up-arrow me-2"></i>Total em Juros</span><span
+                                    id="poupanca_total_juros">R$ 0,00</span></div>
+                            <div class="progress" style="height: 10px;">
+                                <div id="poupanca_progresso_investido" class="progress-bar bg-secondary"
+                                     role="progressbar" style="width: 0%"></div>
+                                <div id="poupanca_progresso_juros" class="progress-bar bg-primary" role="progressbar"
+                                     style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container py-5">
+        <div class="text-center mb-5"><h2 class="fw-bold">Entenda os Investimentos</h2>
+            <p class="text-muted">Conheça as características de cada opção simulada.</p></div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body"><h5 class="card-title fw-bold"><i class="bi bi-graph-up me-2"></i>Renda Fixa
+                        (CDB)</h5>
+                        <p class="card-text small">O Certificado de Depósito Bancário é um título de renda fixa emitido
+                            por bancos. É considerado seguro e possui garantia do FGC. O rendimento é atrelado a um
+                            percentual do CDI.</p></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body"><h5 class="card-title fw-bold"><i class="bi bi-shield-check me-2"></i>Tesouro
+                        Direto</h5>
+                        <p class="card-text small">São títulos públicos federais, considerados o investimento mais
+                            seguro do país. Existem diferentes tipos, como o Tesouro Selic (pós-fixado) e o Tesouro
+                            Prefixado.</p></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body"><h5 class="card-title fw-bold"><i class="bi bi-piggy-bank me-2"></i>Poupança
+                    </h5>
+                        <p class="card-text small">A opção mais tradicional, com baixo risco e liquidez diária. Seu
+                            rendimento é definido por lei e pode ser menor em comparação com outras opções de renda
+                            fixa.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-4">
+        <div class="p-5 bg-light rounded-3 text-center">
+            <h2 class="fw-bold">Pronto para começar a investir?</h2>
+            <p class="lead">Nossos especialistas estão prontos para te ajudar a encontrar os melhores investimentos para
+                o seu perfil.</p>
+            <a class="btn btn-primary btn-lg me-2" href="#" role="button"><i class="bi bi-rocket-takeoff-fill me-2"></i>Ver
+                todos os investimentos</a>
+            <a class="btn btn-outline-secondary btn-lg" href="#" role="button"><i class="bi bi-headset me-2"></i>Falar
+                com um especialista</a>
+        </div>
+    </section>
+</main>
+
+<footer id="rodape_principal" class="rodape_principal">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4"><img src="assets/img/LogoBI.png" alt="Logo Banco do Brasil" class="mb-3"
+                                                     height="120">
+                <p>O Banco do Brasil está presente na vida de milhões de brasileiros, oferecendo soluções, crédito e
+                    apoio para tudo que você imaginar.</p></div>
+            <div class="col-lg-2 col-md-6 mb-4"><h5><i class="bi bi-compass me-2"></i>Navegação</h5>
+                <ul class="lista_links_rodape">
+                    <li><a href="#"><i class="bi bi-box-seam me-1"></i>Produtos e Serviços</a></li>
+                    <li><a href="#"><i class="bi bi-graph-up me-1"></i>Investimentos</a></li>
+                    <li><a href="#"><i class="bi bi-shield-check me-1"></i>Seguros</a></li>
+                    <li><a href="#"><i class="bi bi-wallet2 me-1"></i>Crédito</a></li>
+                    <li><a href="#"><i class="bi bi-currency-exchange me-1"></i>Câmbio</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4"><h5><i class="bi bi-info-circle me-2"></i>Ajuda</h5>
+                <ul class="lista_links_rodape">
+                    <li><a href="#"><i class="bi bi-headset me-1"></i>Atendimento</a></li>
+                    <li><a href="#"><i class="bi bi-telephone-inbound me-1"></i>SAC</a></li>
+                    <li><a href="#"><i class="bi bi-mic me-1"></i>Ouvidoria</a></li>
+                    <li><a href="#"><i class="bi bi-lock me-1"></i>Segurança</a></li>
+                    <li><a href="#"><i class="bi bi-eye-slash me-1"></i>Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4"><h5><i class="bi bi-bank2 me-2"></i>Institucional</h5>
+                <ul class="lista_links_rodape">
+                    <li><a href="#"><i class="bi bi-info-square me-1"></i>Sobre Nós</a></li>
+                    <li><a href="#"><i class="bi bi-bar-chart-line me-1"></i>Relações com Investidores</a></li>
+                    <li><a href="#"><i class="bi bi-briefcase me-1"></i>Trabalhe Conosco</a></li>
+                    <li><a href="#"><i class="bi bi-newspaper me-1"></i>Imprensa</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-12 mb-4"><h5><i class="bi bi-share me-2"></i>Redes Sociais</h5>
+                <div class="icones_sociais_rodape"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-youtube"></i></a></div>
+            </div>
+        </div>
+        <div class="assinatura_rodape text-center"><p><i class="bi bi-c-circle me-1"></i>&copy; 2025 Banco do Brasil
+            S.A. CNPJ: 00.000.000/0001-91</p></div>
+    </div>
+</footer>
+
+<div class="modal fade" id="modal_acesso_conta" tabindex="-1" aria-labelledby="titulo_modal_login" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content conteudo_modal_login">
+            <div class="modal-header cabecalho_modal_login">
+                <h1 class="modal-title fs-5" id="titulo_modal_login"><i class="bi bi-person-circle me-2"></i>Acessar
+                    Conta</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body corpo_modal_login p-4">
+                <form id="formulario_login">
+                    <div class="mb-3"><label for="campo_agencia" class="form-label">Agência</label>
+                        <div class="input-group"><span class="input-group-text"><i class="bi bi-bank"></i></span><input
+                                type="text" class="form-control" id="campo_agencia" placeholder="0000" required></div>
+                    </div>
+                    <div class="mb-3"><label for="campo_conta" class="form-label">Conta Corrente</label>
+                        <div class="input-group"><span class="input-group-text"><i
+                                class="bi bi-person-vcard"></i></span><input type="text" class="form-control" id="campo_conta" placeholder="00000-0" required></div>
+                    </div>
+                    <div class="mb-3"><label for="campo_senha_login" class="form-label">Senha</label>
+                        <div class="input-group"><span class="input-group-text"><i
+                                class="bi bi-lock-fill"></i></span><input type="password" class="form-control" id="campo_senha_login" placeholder="Sua senha de 6 dígitos" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer rodape_modal_login">
+                <button type="button" class="btn btn-secondary" id="botao_fechar_modal_login" data-bs-dismiss="modal">
+                    Cancelar
+                </button>
+                <button type="button" class="btn botao_principal_modal_login" id="botao_entrar"><i
+                        class="bi bi-box-arrow-in-right me-2"></i>Entrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_nova_conta" tabindex="-1" aria-labelledby="titulo_modal_cadastro" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content conteudo_modal_cadastro">
+            <div class="modal-header cabecalho_modal">
+                <h1 class="modal-title fs-5" id="titulo_modal_cadastro"><i class="bi bi-person-plus-fill me-2"></i>Abra
+                    sua Conta Digital</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body corpo_modal p-4">
+                <form id="formulario_nova_conta">
+                    <div class="mb-3"><label for="campo_nome_completo" class="form-label">Nome Completo</label>
+                        <div class="input-group"><span class="input-group-text"><i
+                                class="bi bi-person"></i></span><input type="text" class="form-control" id="campo_nome_completo" placeholder="Digite seu nome completo" required>
+                        </div>
+                    </div>
+                    <div class="mb-3"><label for="campo_cpf" class="form-label">CPF</label>
+                        <div class="input-group"><span class="input-group-text"><i
+                                class="bi bi-person-vcard"></i></span><input type="text" class="form-control" id="campo_cpf" placeholder="000.000.000-00" required></div>
+                    </div>
+                    <div class="mb-3"><label for="campo_email" class="form-label">E-mail</label>
+                        <div class="input-group"><span class="input-group-text"><i
+                                class="bi bi-envelope"></i></span><input type="email" class="form-control" id="campo_email" placeholder="seu.email@exemplo.com" required>
+                        </div>
+                    </div>
+                    <div class="mb-3"><label for="campo_senha" class="form-label">Crie uma Senha</label>
+                        <div class="input-group"><span class="input-group-text"><i class="bi bi-lock"></i></span><input type="password" class="form-control" id="campo_senha" placeholder="Senha forte" required></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer rodape_modal">
+                <button type="button" class="btn btn-secondary" id="botao_fechar_modal" data-bs-dismiss="modal">Fechar
+                </button>
+                <button type="button" class="btn botao_principal_modal" id="botao_criar_conta"><i class="bi bi-check-lg me-2"></i>Criar Conta
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="simulador_investimentos.js"></script>
+</body>
+</html>
